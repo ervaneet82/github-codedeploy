@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+       - sudo apt update -y
+       - sudo apt install python3 -y
+       - sudo apt install python3-dev -y
+       - sudo apt install python3-pip -y
+  build:
+    commands:
+      - pip3 install configparser -t .
+artifacts:
+  type: zip
+  files:
+     - '**/*'
+  base-directory: 'dist'
